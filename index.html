@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP JS</title>
+</head>
+<body>
+    <form action="#" method="post" id="add_vehicle_form">
+        <input type="text" id="vehicle_type" placeholder="Vehicle Type">
+        <input type="text" id="vehicle_type_description" placeholder="Vehicle Type Description">
+        <input type="text" id="vehicle_year_model" placeholder="Year model">
+        <input type="color" id="vehicle_color" >
+        <input type="text" id="vehicle_engine" placeholder="Engine Capacity">
+        <input type="text" id="vehicle_brand" placeholder="Brand">
+        <button type="submit" id="submit_btn"> Save </button>
+    </form>
+
+    <table style="margin-top: 5%;">
+        <thead>
+            <tr>
+                <th>Vehicle Type</th>
+                <th>Description</th>
+                <th>Year Model</th>
+                <th>Color</th>
+                <th>Engine Capacity</th>
+                <th>Brand</th>
+            </tr>
+        </thead>
+        <tbody id="table_body">
+            <tr> <td colspan="6"> No data found </td> </tr>
+        </tbody>
+    </table>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>

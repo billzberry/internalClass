@@ -26,6 +26,37 @@ class HelperFunctions {
         }
         return a.join("")
     }
+
+    getParams(where, order) {
+        where = where ? where.split(',') : []
+        order = order ? order.split(',') : []
+
+        let sql = '', orderBy = '', columns = []
+        for (let i = 0; i < where.length; i++) {
+            let sqlString = where[i].split('-')
+            if (i === 0) {
+                sql += sqlString[0] + ' = ?'
+            } else {
+                sql += ' AND ' + sqlString[0] + ' = ?'
+            }
+            
+            columns.push(sqlString[1])
+        }
+
+        if (order.length > 0) {
+            orderBy = ' ORDER BY '
+            for (let i = 0; i < order.length; i++) {
+                let sqlString = order[i].split('-')
+                if (i === 0) {
+                    orderBy += sqlString[0] + ' ' + sqlString[1]
+                } else {
+                    orderBy += ', ' + sqlString[0] + ' ' + sqlString[1]
+                }
+            }
+        }
+
+        return {sql, orderBy, columns}
+    }
 }
 
 module.exports = HelperFunctions

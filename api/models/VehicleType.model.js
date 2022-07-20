@@ -58,7 +58,7 @@ class VehicleTypeModel {
     async insertData() {
         const result = await this.#_db.query(String.raw`
             INSERT INTO vehicle_type (vehicle_type_id, name, description, status, date_time, session_id)
-            VALUES(?, ?, ?, ?, ?)
+            VALUES(?, ?, ?, ?, ?, ?)
         `, [this.#_id, this.#_name, this.#_description, this.#_status, this.#_dateTime, this.#_sessionId])
         return result
     }
@@ -91,7 +91,7 @@ class VehicleTypeModel {
         const result = await this.#_db.query(String.raw`
             SELECT * FROM vehicle_type 
             WHERE ${object.whereClause} 
-            ${object.order} 
+            ${object.order ? object.order : ''} 
             LIMIT ${object.limit ? object.limit : 10} OFFSET ${object.offset ? object.offset : 0}
         `, object.columns)
         return result

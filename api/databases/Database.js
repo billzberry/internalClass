@@ -1,6 +1,6 @@
 const path = require('path')
 const dotenv = require('dotenv')
-dotenv.config({ path: path.join(__dirname, `.env`)})
+dotenv.config({ path: path.join(__dirname, `../.env`)})
 const mysql = require('mysql')
 
 class Database {
@@ -17,7 +17,8 @@ class Database {
                 host: process.env.DB_HOST,
                 user: process.env.DB_USER,
                 password: process.env.DB_PASSWORD,
-                port: process.env.DB_PORT
+                port: process.env.DB_PORT,
+                database: process.env.DB_NAME
             })
 
             this.#_dbConnection.connect((error) => {

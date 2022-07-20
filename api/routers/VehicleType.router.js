@@ -1,4 +1,4 @@
-const VehicleController = require("../controllers/VehicleType.controller")
+const VehicleTypeController = require("../controllers/VehicleType.controller")
 
 
 
@@ -14,11 +14,11 @@ class VehicleTypeRouter {
 
     #__init__() {
         this.#_server.get('/vehicle-type', (request, response) => {
-            new VehicleController(this.#_database, request, response, 'GET')
+            new VehicleTypeController(this.#_database, request, response, 'GET')
         })
 
         this.#_server.post('/vehicle-type', (request, response) => {
-            new VehicleController(this.#_database, request, response, 'POST')
+            new VehicleTypeController(this.#_database, request, response, 'POST')
         })
     }
 }

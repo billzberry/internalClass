@@ -1,7 +1,7 @@
 
 
 
-class VehicleController {
+class VehicleTypeController {
     #_db
     #_req
     #_res
@@ -20,6 +20,10 @@ class VehicleController {
             
         } else if (this.#_method === 'POST') {
             
+        } else if (this.#_method === 'PUT') {
+            
+        } else if (this.#_method === 'DELETE') {
+            
         } else {
             this.#_res.json({
                 status: 'invalid',
@@ -37,4 +41,4 @@ class VehicleController {
     }
 }
 
-module.exports = VehicleController
+module.exports = VehicleTypeController

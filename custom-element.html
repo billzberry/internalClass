@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Element</title>
+</head>
+<body>
+    <my-shoe title="I am a web developer"
+    href="https://logig.tech"></my-shoe>
+
+    <script>
+        class myShoe extends HTMLElement {
+
+            constructor() {
+                super()
+
+                this.hideState = false
+
+                this.innerHTML = String.raw`
+                    <span id="mySpan">Show content</span>
+                    <div id="mycontent">
+                        <h1> ${this.getAttribute('title')} </h1> 
+                        <a href="${this.getAttribute('href')}"> 
+                            ${this.getAttribute('href')} 
+                        </a>   
+                    </div>
+                `
+            }
+
+            connectedCallback() {
+                const mycontent = document.getElementById('mycontent')
+                mycontent.style.display = 'none'
+                this.showHelloWorld()
+            }
+
+            showHelloWorld() {
+                const mySpan = document.getElementById('mySpan')
+                const thisClass = this
+                mySpan.addEventListener('click', (e) => {
+                    e.preventDefault()
+                    thisClass.clickEvent()
+                })
+            }
+
+            clickEvent() {
+                const mycontent = document.getElementById('mycontent')
+                mycontent.style.display = this.hideState ? 'none' : 'block'
+
+                this.hideState = !this.hideState
+                
+            }
+            
+        }
+
+        customElements.define('my-shoe', myShoe)
+    </script>
+</body>
+</html>

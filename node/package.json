@@ -1,0 +1,16 @@
+{
+  "name": "text",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "oseiGyapong",
+  "license": "MIT",
+  "devDependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mysql": "^2.18.1"
+  }
+}

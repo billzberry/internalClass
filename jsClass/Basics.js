@@ -323,6 +323,11 @@ const calculateMode = (list) => {
     console.log(mostAppearedNumbers)
 }
 
+/**
+ * 
+ * @param {*} list 
+ * @returns 
+ */
 const calculateMedian = (list) => {
     const middleNumber = Math.floor(list.length / 2)
     if (middleNumber % 2 === 0) {
@@ -337,4 +342,33 @@ const calculateMedian = (list) => {
 
 // calculateMode(studentAges)
 
-console.log(calculateMedian(studentAges))
+// console.log(calculateMedian(studentAges))
+
+// console.log("First action");
+// console.log("Second action");
+// console.log("Third action");
+
+console.log("First action");
+setTimeout(() => {
+
+}, 1000)
+console.log("Third action");
+
+/**
+ * This is my function
+ * @param {string} name - input name
+ * @param {function} alertMe - a callback function to be called when the main function is done processing
+ * alertMe - accepts a parameter of number
+ */
+const sayMyName = (name, alertMe) => {
+    for (let i = 0; i < 10; i++) {
+        console.log(name)
+    }
+
+    alertMe(10)
+}
+
+
+sayMyName('Alexander', (value) => {
+
+})
